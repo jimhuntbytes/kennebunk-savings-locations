@@ -1,0 +1,737 @@
+/* Kennebunk Savings Bank - Location Pages Stylesheet */
+
+:root {
+  --ksb-purple: #2F1C8C;
+  --ksb-purple-dark: #342E86;
+  --ksb-purple-light: #4A3BA0;
+  --ksb-purple-bg: #F4F2FA;
+  --ksb-green: #67a671;
+  --ksb-green-light: #eef7ef;
+  --ksb-white: #FFFFFF;
+  --ksb-off-white: #F9F9FB;
+  --ksb-gray-100: #eeeeee;
+  --ksb-gray-200: #dddddd;
+  --ksb-gray-300: #abb8c3;
+  --ksb-gray-500: #444444;
+  --ksb-gray-700: #313131;
+  --ksb-gray-900: #000000;
+  --ksb-shadow: 0 2px 8px rgba(47, 28, 140, 0.08);
+  --ksb-shadow-lg: 0 4px 20px rgba(47, 28, 140, 0.12);
+  --ksb-radius: 8px;
+  --ksb-radius-lg: 12px;
+  --ksb-transition: 0.2s ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--ksb-gray-900);
+  background: var(--ksb-white);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--ksb-purple);
+  text-decoration: none;
+  transition: color var(--ksb-transition);
+}
+
+a:hover {
+  color: var(--ksb-purple-light);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: var(--ksb-gray-100);
+  padding: 12px 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.breadcrumb-list li::after {
+  content: '/';
+  margin-left: 8px;
+  color: var(--ksb-gray-300);
+}
+
+.breadcrumb-list li:last-child::after {
+  display: none;
+}
+
+.breadcrumb-list li:last-child {
+  color: var(--ksb-gray-500);
+}
+
+/* Hero Section */
+.branch-hero {
+  background: linear-gradient(135deg, var(--ksb-purple) 0%, var(--ksb-purple-dark) 100%);
+  color: var(--ksb-white);
+  padding: 48px 0;
+}
+
+.branch-hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.branch-hero .branch-location {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Branch Details Grid */
+.branch-details {
+  padding: 40px 0;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Info Card */
+.info-card {
+  background: var(--ksb-white);
+  border: 1px solid var(--ksb-gray-200);
+  border-radius: var(--ksb-radius-lg);
+  padding: 28px;
+  box-shadow: var(--ksb-shadow);
+}
+
+.info-card h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ksb-purple);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-card h2 svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Address Block */
+.address-block {
+  margin-bottom: 20px;
+}
+
+.address-block .street {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ksb-gray-900);
+}
+
+.address-block .city-state {
+  color: var(--ksb-gray-500);
+  margin-top: 2px;
+}
+
+/* Phone Block */
+.phone-block {
+  margin-bottom: 24px;
+}
+
+.phone-block a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ksb-purple);
+}
+
+.phone-block a svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Manager Block */
+.manager-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--ksb-purple-bg);
+  border-radius: var(--ksb-radius);
+  margin-bottom: 24px;
+}
+
+.manager-avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--ksb-purple);
+  color: var(--ksb-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.manager-info .manager-label {
+  font-size: 0.8rem;
+  color: var(--ksb-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.manager-info .manager-name {
+  font-weight: 600;
+  color: var(--ksb-gray-900);
+}
+
+/* CTA Buttons */
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: var(--ksb-radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--ksb-transition);
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: var(--ksb-purple);
+  color: var(--ksb-white);
+}
+
+.btn-primary:hover {
+  background: var(--ksb-purple-dark);
+  color: var(--ksb-white);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--ksb-purple);
+  border: 2px solid var(--ksb-purple);
+}
+
+.btn-outline:hover {
+  background: var(--ksb-purple-bg);
+  color: var(--ksb-purple);
+  text-decoration: none;
+}
+
+/* Hours Table */
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours-table caption {
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ksb-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+}
+
+.hours-table tr {
+  border-bottom: 1px solid var(--ksb-gray-200);
+}
+
+.hours-table tr:last-child {
+  border-bottom: none;
+}
+
+.hours-table td {
+  padding: 10px 0;
+  font-size: 0.95rem;
+}
+
+.hours-table td:first-child {
+  font-weight: 600;
+  color: var(--ksb-gray-700);
+  width: 45%;
+}
+
+.hours-table td:last-child {
+  color: var(--ksb-gray-900);
+  text-align: right;
+}
+
+.hours-table .closed {
+  color: var(--ksb-gray-500);
+  font-style: italic;
+}
+
+.hours-section + .hours-section {
+  margin-top: 24px;
+}
+
+/* Map Section */
+.branch-map {
+  padding: 0 0 40px;
+}
+
+.map-container {
+  border-radius: var(--ksb-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ksb-shadow);
+  border: 1px solid var(--ksb-gray-200);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  display: block;
+}
+
+/* Services Section */
+.branch-services {
+  padding: 40px 0;
+  background: var(--ksb-gray-100);
+}
+
+.branch-services h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ksb-gray-900);
+  margin-bottom: 24px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.service-card {
+  background: var(--ksb-white);
+  border: 1px solid var(--ksb-gray-200);
+  border-radius: var(--ksb-radius);
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow var(--ksb-transition);
+}
+
+.service-card:hover {
+  box-shadow: var(--ksb-shadow-lg);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon.available {
+  background: var(--ksb-green-light);
+  color: var(--ksb-green);
+}
+
+.service-icon.unavailable {
+  background: var(--ksb-gray-100);
+  color: var(--ksb-gray-300);
+}
+
+.service-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.service-card .service-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ksb-gray-900);
+  margin-bottom: 4px;
+}
+
+.service-card .service-status {
+  font-size: 0.8rem;
+  color: var(--ksb-gray-500);
+}
+
+.service-status.available {
+  color: var(--ksb-green);
+  font-weight: 600;
+}
+
+/* Banking Links Section */
+.banking-links {
+  padding: 40px 0;
+}
+
+.banking-links h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ksb-gray-900);
+  margin-bottom: 8px;
+}
+
+.banking-links .section-desc {
+  color: var(--ksb-gray-500);
+  margin-bottom: 24px;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.link-card {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  background: var(--ksb-white);
+  border: 1px solid var(--ksb-gray-200);
+  border-radius: var(--ksb-radius-lg);
+  padding: 24px;
+  text-decoration: none;
+  transition: all var(--ksb-transition);
+}
+
+.link-card:hover {
+  border-color: var(--ksb-purple);
+  box-shadow: var(--ksb-shadow-lg);
+  text-decoration: none;
+}
+
+.link-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--ksb-purple-bg);
+  color: var(--ksb-purple);
+  border-radius: var(--ksb-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.link-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.link-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ksb-gray-900);
+  margin-bottom: 4px;
+}
+
+.link-content p {
+  font-size: 0.875rem;
+  color: var(--ksb-gray-500);
+  line-height: 1.5;
+}
+
+.link-card:hover h3 {
+  color: var(--ksb-purple);
+}
+
+/* FAQ Section */
+.branch-faq {
+  padding: 40px 0;
+  background: var(--ksb-gray-100);
+}
+
+.branch-faq h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ksb-gray-900);
+  margin-bottom: 24px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq-item {
+  background: var(--ksb-white);
+  border: 1px solid var(--ksb-gray-200);
+  border-radius: var(--ksb-radius);
+  overflow: hidden;
+  transition: box-shadow var(--ksb-transition);
+}
+
+.faq-item:hover {
+  box-shadow: var(--ksb-shadow);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ksb-gray-900);
+  text-align: left;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.faq-question:hover {
+  color: var(--ksb-purple);
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--ksb-gray-500);
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--ksb-purple);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 20px 18px;
+  color: var(--ksb-gray-700);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+/* Other Locations Section */
+.other-locations {
+  padding: 40px 0;
+}
+
+.other-locations h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ksb-gray-900);
+  margin-bottom: 8px;
+}
+
+.other-locations .section-desc {
+  color: var(--ksb-gray-500);
+  margin-bottom: 24px;
+}
+
+.state-group h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ksb-purple);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.state-group + .state-group {
+  margin-top: 20px;
+}
+
+.location-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  list-style: none;
+}
+
+.location-links li a {
+  display: block;
+  padding: 12px 16px;
+  background: var(--ksb-gray-100);
+  border-radius: var(--ksb-radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ksb-gray-700);
+  transition: all var(--ksb-transition);
+}
+
+.location-links li a:hover {
+  background: var(--ksb-purple-bg);
+  color: var(--ksb-purple);
+  text-decoration: none;
+}
+
+.location-links li.current a {
+  background: var(--ksb-purple);
+  color: var(--ksb-white);
+  font-weight: 600;
+}
+
+/* Mobile Sticky CTA */
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--ksb-white);
+  border-top: 1px solid var(--ksb-gray-200);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+  z-index: 100;
+}
+
+.mobile-sticky-cta .sticky-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.mobile-sticky-cta .btn {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .branch-hero {
+    padding: 32px 0;
+  }
+
+  .branch-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mobile-sticky-cta {
+    display: block;
+  }
+
+  body {
+    padding-bottom: 72px;
+  }
+
+  .map-container iframe {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .location-links {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-badges {
+    justify-content: center;
+  }
+}
