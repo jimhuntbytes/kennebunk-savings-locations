@@ -603,11 +603,13 @@ a:hover {
 @media (max-width: 900px) {
   .locations-main {
     grid-template-columns: 1fr;
-    min-height: auto;
+    height: auto;
   }
 
   .locations-panel {
+    height: auto;
     max-height: none;
+    overflow: visible;
     position: static;
     border-right: none;
     border-bottom: 1px solid var(--ksb-gray-200);
