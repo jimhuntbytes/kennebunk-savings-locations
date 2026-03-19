@@ -17,15 +17,15 @@
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     .location-item.hidden { display: none; }
     @media (max-width: 1024px) {
-      .desktop-sidebar { display: none; }
-      .mobile-ctas { display: block; }
-      .desktop-layout { flex-direction: column; height: auto; overflow: visible; }
-      .desktop-list { width: 100%; height: auto; max-height: none; overflow: visible; border-right: none; }
-      .desktop-list .flex-1.overflow-y-auto { overflow-y: visible; max-height: none; }
-      .desktop-map { height: 350px; order: -1; }
+      .desktop-sidebar { display: none !important; }
+      .mobile-ctas { display: block !important; }
+      .desktop-layout { flex-direction: column !important; height: auto !important; overflow: visible !important; }
+      .desktop-list { width: 100% !important; height: auto !important; max-height: none !important; overflow: visible !important; border-right: none !important; box-shadow: none !important; }
+      .desktop-list .flex-1.overflow-y-auto { overflow-y: visible !important; max-height: none !important; }
+      .desktop-map { height: 350px !important; order: -1 !important; flex: none !important; }
     }
     @media (max-width: 640px) {
-      .desktop-map { height: 250px; }
+      .desktop-map { height: 250px !important; }
     }
   </style>
   
