@@ -439,6 +439,29 @@ a:hover {
 /* Custom map pins overlay approach not needed with iframe,
    but keeping the container for potential future JS map */
 
+/* Summary Section */
+.locations-summary {
+  padding: 32px 0;
+  border-top: 1px solid var(--ksb-gray-200);
+}
+
+.locations-summary .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.locations-summary p {
+  font-size: 0.95rem;
+  color: var(--ksb-gray-500);
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+.locations-summary a {
+  font-weight: 600;
+}
+
 /* Results Count */
 .results-info {
   padding: 12px 20px;
