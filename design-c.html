@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Locations | Kennebunk Savings</title>
+  <meta name="description" content="Find a Kennebunk Savings Bank branch near you. 16 locations across southern Maine and New Hampshire with ATMs, drive-up banking, and Saturday hours.">
+  <meta name="robots" content="noindex, nofollow">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .location-item.hidden { display: none; }
+  </style>
+</head>
+<body class="bg-[#f8f9fa] text-slate-900 antialiased">
+
+  <main class="flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="bg-slate-50 flex flex-col h-full w-72 border-r border-slate-200 shrink-0">
+      <div class="px-6 py-6">
+        <h1 class="font-headline text-2xl font-bold text-[#003953] tracking-tight mb-1">Locations</h1>
+        <p class="text-sm text-slate-500 font-medium">Maine & New Hampshire</p>
+      </div>
+
+      <div class="px-6 flex flex-col gap-1 mb-6">
+        <a href="#" class="flex items-center gap-3 px-4 py-3 bg-white text-[#003953] font-bold rounded-xl shadow-sm text-sm">
+          <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">location_on</span>
+          Find a Branch
+        </a>
+        <a href="https://www.kennebunksavings.com/appointment-scheduling/" target="_blank" rel="noopener" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 rounded-xl transition-colors text-sm">
+          <span class="material-symbols-outlined text-lg">calendar_today</span>
+          Schedule Appointment
+        </a>
+        <a href="https://www.kennebunksavings.com/holiday-hours/" target="_blank" rel="noopener" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 rounded-xl transition-colors text-sm">
+          <span class="material-symbols-outlined text-lg">event_busy</span>
+          Holiday Schedule
+        </a>
+        <a href="https://www.kennebunksavings.com/location/" target="_blank" rel="noopener" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 rounded-xl transition-colors text-sm">
+          <span class="material-symbols-outlined text-lg">atm</span>
+          ATM Locations
+        </a>
+      </div>
+
+      <div class="px-6 mt-auto pb-6">
+        <a href="tel:+18003396573" class="block w-full text-center py-3 bg-[#003953] text-white font-bold rounded-xl hover:bg-[#002a3d] transition-colors text-sm">
+          Call 800-339-6573
+        </a>
+        <p class="text-[11px] text-slate-400 text-center mt-3">Mon-Thu 8-5 | Fri 8-5:30 | Sat 8-12</p>
+      </div>
+    </aside>
+
+    <!-- Branch List -->
+    <section class="w-[380px] bg-white border-r border-slate-100 flex flex-col shrink-0 shadow-lg shadow-slate-200/30">
+      <div class="p-4">
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+          <input id="location-search" class="w-full pl-10 pr-8 py-3 rounded-xl bg-slate-50 border-none focus:ring-2 focus:ring-[#003953] text-sm" placeholder="Search by town or zip code..." type="text" autocomplete="off"/>
+          <button id="search-clear" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 text-lg" style="display:none;">&times;</button>
+        </div>
+        <p class="text-xs text-slate-400 mt-2 px-1">Showing <strong id="results-count" class="text-slate-600">16</strong> of 16 branches</p>
+      </div>
+
+      <div class="flex-1 overflow-y-auto hide-scrollbar" id="locations-list">
+        
+              <div class="p-4 mx-2 mb-1 rounded-xl bg-slate-50 border-l-4 border-[#003953] transition-all cursor-pointer group location-item"
+                   data-city="berwick" data-zip="03901" data-name="berwick" data-state="me"
+                   data-lat="43.2659536" data-lng="-70.8633476">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Berwick</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">2 School Street, Berwick, ME 03901</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="berwick.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.2659536,-70.8633476" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="eliot" data-zip="03903" data-name="eliot" data-state="me"
+                   data-lat="43.1293575" data-lng="-70.7710672">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Eliot</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">7 Levesque Drive, Eliot, ME 03903</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Instant Debit</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="eliot.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.1293575,-70.7710672" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="kennebunk" data-zip="04043" data-name="kennebunk lower village" data-state="me"
+                   data-lat="43.3601787" data-lng="-70.4794124">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Kennebunk Lower Village</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">10 Western Avenue, Kennebunk, ME 04043</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="kennebunk-lower-village.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.3601787,-70.4794124" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="kennebunk" data-zip="04043" data-name="kennebunk main street" data-state="me"
+                   data-lat="43.3874039" data-lng="-70.5385282">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Kennebunk Main Street</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">104 Main Street, Kennebunk, ME 04043</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="kennebunk-main-street.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.3874039,-70.5385282" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="kennebunk" data-zip="04043" data-name="kennebunk portland road" data-state="me"
+                   data-lat="43.3942392" data-lng="-70.5327723">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Kennebunk Portland Road</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">50 Portland Road, Kennebunk, ME 04043</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Instant Debit</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="kennebunk-portland-road.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.3942392,-70.5327723" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="kittery" data-zip="03904" data-name="kittery" data-state="me"
+                   data-lat="43.0892055" data-lng="-70.7360773">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Kittery</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">4A Shapleigh Road, Kittery, ME 03904</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="kittery.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.0892055,-70.7360773" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="north berwick" data-zip="03906" data-name="north berwick" data-state="me"
+                   data-lat="43.3058238" data-lng="-70.7365285">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">North Berwick</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">8 Main Street, North Berwick, ME 03906</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Instant Debit</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="north-berwick.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.3058238,-70.7365285" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="ogunquit" data-zip="03907" data-name="ogunquit" data-state="me"
+                   data-lat="43.246427" data-lng="-70.6005745">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Ogunquit</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">142 Main Street, Ogunquit, ME 03907</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="ogunquit.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.246427,-70.6005745" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="sanford" data-zip="04073" data-name="sanford" data-state="me"
+                   data-lat="43.4164091" data-lng="-70.7509716">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Sanford</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">1314 Main Street, Sanford, ME 04073</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="sanford.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.4164091,-70.7509716" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="wells" data-zip="04090" data-name="wells" data-state="me"
+                   data-lat="43.3227287" data-lng="-70.5833608">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Wells</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">49 Sanford Road, Wells, ME 04090</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="wells.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.3227287,-70.5833608" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="york" data-zip="03909" data-name="york (hannaford drive)" data-state="me"
+                   data-lat="43.150503" data-lng="-70.6688078">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">York (Hannaford Drive)</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">2 Hannaford Drive, York, ME 03909</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Instant Debit</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="york-hannaford-drive.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.150503,-70.6688078" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="york" data-zip="03909" data-name="york (woodbridge road)" data-state="me"
+                   data-lat="43.1442732" data-lng="-70.6465419">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">York (Woodbridge Road)</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">ME</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">16 Woodbridge Road, York, ME 03909</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="york-woodbridge-road.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.1442732,-70.6465419" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="dover" data-zip="03820" data-name="dover" data-state="nh"
+                   data-lat="43.2081439" data-lng="-70.8745649">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Dover</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">NH</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">701 Central Avenue, Dover, NH 03820</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Instant Debit</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="dover-nh.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.2081439,-70.8745649" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="hampton" data-zip="03842" data-name="hampton" data-state="nh"
+                   data-lat="42.9382306" data-lng="-70.8377767">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Hampton</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">NH</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">24 Winnacunnet Road, Hampton, NH 03842</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="hampton-nh.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//42.9382306,-70.8377767" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="portsmouth" data-zip="03801" data-name="portsmouth" data-state="nh"
+                   data-lat="43.0790164" data-lng="-70.7627975">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Portsmouth</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">NH</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">111 Maplewood Avenue, Portsmouth, NH 03801</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="portsmouth-nh.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//43.0790164,-70.7627975" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+              <div class="p-4 mx-2 mb-1 rounded-xl hover:bg-slate-50 border-l-4 border-transparent hover:border-slate-200 transition-all cursor-pointer group location-item"
+                   data-city="stratham" data-zip="03885" data-name="stratham" data-state="nh"
+                   data-lat="42.9948284" data-lng="-70.9260492">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-headline font-bold text-base text-[#003953]">Stratham</h3>
+                  <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">NH</span>
+                </div>
+                <p class="text-sm text-slate-500 mb-2">9 Portsmouth Avenue, Stratham, NH 03885</p>
+                <div class="flex items-center gap-3 text-xs">
+                  <div class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                    Closes 5:00 PM
+                  </div>
+                  <span class="text-slate-300">|</span>
+                  <div class="flex items-center gap-1 text-slate-400 font-medium">
+                    <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">atm</span>
+                    24/7 ATM
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-1 mt-2"><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Drive-Up</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Instant Debit</span><span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">Sat Hours</span></div>
+                <div class="flex gap-3 mt-3 pt-2 border-t border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <a href="stratham-nh.html" class="text-xs font-semibold text-[#003953] hover:underline">Branch Details</a>
+                  <a href="https://www.google.com/maps/dir//42.9948284,-70.9260492" target="_blank" rel="noopener" class="text-xs font-semibold text-[#003953] hover:underline">Directions</a>
+                  <a href="tel:+18003396573" class="text-xs font-semibold text-[#003953] hover:underline">Call</a>
+                </div>
+              </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <div class="flex-1 relative">
+      <iframe
+        id="locations-map"
+        title="Map of all Kennebunk Savings Bank branches"
+        src="https://maps.google.com/maps?q=Kennebunk+Savings&near=43.21454515625,-70.70682365&t=&z=9&ie=UTF8&iwloc=&output=embed"
+        class="w-full h-full border-none"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </main>
+
+  <script>
+  (function() {
+    var items = document.querySelectorAll('.location-item');
+    var countEl = document.getElementById('results-count');
+    var mapIframe = document.getElementById('locations-map');
+    var searchInput = document.getElementById('location-search');
+    var clearBtn = document.getElementById('search-clear');
+    var defaultMapSrc = 'https://maps.google.com/maps?q=Kennebunk+Savings&near=43.21454515625,-70.70682365&t=&z=9&ie=UTF8&iwloc=&output=embed';
+
+    searchInput.addEventListener('input', function() {
+      var query = this.value.trim().toLowerCase();
+      clearBtn.style.display = query ? 'block' : 'none';
+
+      var visible = 0;
+      items.forEach(function(item) {
+        var city = item.getAttribute('data-city');
+        var zip = item.getAttribute('data-zip');
+        var name = item.getAttribute('data-name');
+        var state = item.getAttribute('data-state');
+
+        if (!query || city.indexOf(query) !== -1 || zip.indexOf(query) !== -1 || name.indexOf(query) !== -1 || state.indexOf(query) !== -1) {
+          item.classList.remove('hidden');
+          visible++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+      countEl.textContent = visible;
+
+      if (visible === 1) {
+        var visibleItem = document.querySelector('.location-item:not(.hidden)');
+        var lat = visibleItem.getAttribute('data-lat');
+        var lng = visibleItem.getAttribute('data-lng');
+        mapIframe.src = 'https://maps.google.com/maps?q=' + lat + ',' + lng + '&t=&z=15&ie=UTF8&iwloc=&output=embed';
+      } else if (!query) {
+        mapIframe.src = defaultMapSrc;
+      }
+    });
+
+    clearBtn.addEventListener('click', function() {
+      searchInput.value = '';
+      clearBtn.style.display = 'none';
+      items.forEach(function(item) { item.classList.remove('hidden'); });
+      countEl.textContent = items.length;
+      mapIframe.src = defaultMapSrc;
+      searchInput.focus();
+    });
+
+    items.forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        if (e.target.closest('a')) return;
+        items.forEach(function(i) {
+          i.classList.remove('bg-slate-50', 'border-[#003953]');
+          i.classList.add('border-transparent');
+        });
+        this.classList.add('bg-slate-50', 'border-[#003953]');
+        this.classList.remove('border-transparent');
+        var lat = this.getAttribute('data-lat');
+        var lng = this.getAttribute('data-lng');
+        mapIframe.src = 'https://maps.google.com/maps?q=' + lat + ',' + lng + '&t=&z=15&ie=UTF8&iwloc=&output=embed';
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>
