@@ -640,11 +640,11 @@
       item.addEventListener('click', function(e) {
         if (e.target.closest('a')) return;
         items.forEach(function(i) {
-          i.classList.remove('ring-2', 'ring-[#003953]', 'bg-[#f0f7fc]', 'border-[#003953]');
-          i.classList.add('border-slate-200', 'bg-white');
+          i.classList.remove('bg-[#f0f7fc]', 'border-[#003953]', 'shadow-md');
+          i.classList.add('border-slate-200', 'bg-white', 'shadow-sm');
         });
-        this.classList.remove('border-slate-200', 'bg-white');
-        this.classList.add('ring-2', 'ring-[#003953]', 'bg-[#f0f7fc]', 'border-[#003953]');
+        this.classList.remove('border-slate-200', 'bg-white', 'shadow-sm');
+        this.classList.add('bg-[#f0f7fc]', 'border-[#003953]', 'shadow-md');
         var lat = this.getAttribute('data-lat');
         var lng = this.getAttribute('data-lng');
         mapIframe.src = 'https://maps.google.com/maps?q=' + lat + ',' + lng + '&t=&z=15&ie=UTF8&iwloc=&output=embed';
