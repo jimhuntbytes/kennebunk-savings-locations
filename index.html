@@ -42,18 +42,18 @@
       <!-- Left: Location Cards -->
       <div class="locations-panel">
         <div class="filter-bar">
-          <div class="state-tabs">
-            <button class="state-tab active" data-filter="all">All <span class="tab-count">16</span></button>
-            <button class="state-tab" data-filter="ME">Maine <span class="tab-count">12</span></button>
-            <button class="state-tab" data-filter="NH">New Hampshire <span class="tab-count">4</span></button>
+          <div class="search-box">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+            <input type="text" id="location-search" placeholder="Search by town or zip code" autocomplete="off">
+            <button id="search-clear" class="search-clear" aria-label="Clear search">&times;</button>
           </div>
         </div>
         <div class="results-info">
-          Showing <strong id="results-count">16</strong> branches
+          Showing <strong id="results-count">16</strong> of 16 branches
         </div>
         <div class="locations-list" id="locations-list">
           
-      <div class="location-card" data-state="ME" data-slug="berwick" data-lat="43.2659536" data-lng="-70.8633476">
+      <div class="location-card" data-state="ME" data-slug="berwick" data-lat="43.2659536" data-lng="-70.8633476" data-city="Berwick" data-zip="03901" data-name="Berwick">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Berwick</div>
           <span class="card-state-badge me">Maine</span>
@@ -77,7 +77,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="eliot" data-lat="43.1293575" data-lng="-70.7710672">
+      <div class="location-card" data-state="ME" data-slug="eliot" data-lat="43.1293575" data-lng="-70.7710672" data-city="Eliot" data-zip="03903" data-name="Eliot">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Eliot</div>
           <span class="card-state-badge me">Maine</span>
@@ -101,7 +101,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="kennebunk-lower-village" data-lat="43.3601787" data-lng="-70.4794124">
+      <div class="location-card" data-state="ME" data-slug="kennebunk-lower-village" data-lat="43.3601787" data-lng="-70.4794124" data-city="Kennebunk" data-zip="04043" data-name="Kennebunk Lower Village">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Kennebunk Lower Village</div>
           <span class="card-state-badge me">Maine</span>
@@ -125,14 +125,14 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="kennebunk-main-street" data-lat="43.3874039" data-lng="-70.5385282">
+      <div class="location-card" data-state="ME" data-slug="kennebunk-main-street" data-lat="43.3874039" data-lng="-70.5385282" data-city="Kennebunk" data-zip="04043" data-name="Kennebunk Main Street">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Kennebunk Main Street</div>
           <span class="card-state-badge me">Maine</span>
         </div>
         <div class="card-address">104 Main Street, Kennebunk, ME 04043</div>
         <div class="card-badges">
-          <span class="card-badge available">ATM</span><span class="card-badge available">Drive-Up</span><span class="card-badge">No Sat Lobby</span>
+          <span class="card-badge available">ATM</span><span class="card-badge available">Drive-Up</span>
         </div>
         <div class="card-hours-preview">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
@@ -149,7 +149,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="kennebunk-portland-road" data-lat="43.3942392" data-lng="-70.5327723">
+      <div class="location-card" data-state="ME" data-slug="kennebunk-portland-road" data-lat="43.3942392" data-lng="-70.5327723" data-city="Kennebunk" data-zip="04043" data-name="Kennebunk Portland Road">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Kennebunk Portland Road</div>
           <span class="card-state-badge me">Maine</span>
@@ -173,14 +173,14 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="kittery" data-lat="43.0892055" data-lng="-70.7360773">
+      <div class="location-card" data-state="ME" data-slug="kittery" data-lat="43.0892055" data-lng="-70.7360773" data-city="Kittery" data-zip="03904" data-name="Kittery">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Kittery</div>
           <span class="card-state-badge me">Maine</span>
         </div>
         <div class="card-address">4A Shapleigh Road, Kittery, ME 03904</div>
         <div class="card-badges">
-          <span class="card-badge available">ATM</span><span class="card-badge available">Drive-Up</span><span class="card-badge">No Sat Lobby</span>
+          <span class="card-badge available">ATM</span><span class="card-badge available">Drive-Up</span>
         </div>
         <div class="card-hours-preview">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
@@ -197,7 +197,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="north-berwick" data-lat="43.3058238" data-lng="-70.7365285">
+      <div class="location-card" data-state="ME" data-slug="north-berwick" data-lat="43.3058238" data-lng="-70.7365285" data-city="North Berwick" data-zip="03906" data-name="North Berwick">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | North Berwick</div>
           <span class="card-state-badge me">Maine</span>
@@ -221,7 +221,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="ogunquit" data-lat="43.246427" data-lng="-70.6005745">
+      <div class="location-card" data-state="ME" data-slug="ogunquit" data-lat="43.246427" data-lng="-70.6005745" data-city="Ogunquit" data-zip="03907" data-name="Ogunquit">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Ogunquit</div>
           <span class="card-state-badge me">Maine</span>
@@ -245,7 +245,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="sanford" data-lat="43.4164091" data-lng="-70.7509716">
+      <div class="location-card" data-state="ME" data-slug="sanford" data-lat="43.4164091" data-lng="-70.7509716" data-city="Sanford" data-zip="04073" data-name="Sanford">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Sanford</div>
           <span class="card-state-badge me">Maine</span>
@@ -269,7 +269,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="wells" data-lat="43.3227287" data-lng="-70.5833608">
+      <div class="location-card" data-state="ME" data-slug="wells" data-lat="43.3227287" data-lng="-70.5833608" data-city="Wells" data-zip="04090" data-name="Wells">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Wells</div>
           <span class="card-state-badge me">Maine</span>
@@ -293,7 +293,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="york-hannaford-drive" data-lat="43.150503" data-lng="-70.6688078">
+      <div class="location-card" data-state="ME" data-slug="york-hannaford-drive" data-lat="43.150503" data-lng="-70.6688078" data-city="York" data-zip="03909" data-name="York (Hannaford Drive)">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | York (Hannaford Drive)</div>
           <span class="card-state-badge me">Maine</span>
@@ -317,14 +317,14 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="ME" data-slug="york-woodbridge-road" data-lat="43.1442732" data-lng="-70.6465419">
+      <div class="location-card" data-state="ME" data-slug="york-woodbridge-road" data-lat="43.1442732" data-lng="-70.6465419" data-city="York" data-zip="03909" data-name="York (Woodbridge Road)">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | York (Woodbridge Road)</div>
           <span class="card-state-badge me">Maine</span>
         </div>
         <div class="card-address">16 Woodbridge Road, York, ME 03909</div>
         <div class="card-badges">
-          <span class="card-badge available">ATM</span><span class="card-badge available">Drive-Up</span><span class="card-badge">No Sat Lobby</span>
+          <span class="card-badge available">ATM</span><span class="card-badge available">Drive-Up</span>
         </div>
         <div class="card-hours-preview">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
@@ -341,7 +341,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="NH" data-slug="dover-nh" data-lat="43.2081439" data-lng="-70.8745649">
+      <div class="location-card" data-state="NH" data-slug="dover-nh" data-lat="43.2081439" data-lng="-70.8745649" data-city="Dover" data-zip="03820" data-name="Dover">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Dover</div>
           <span class="card-state-badge nh">N.H.</span>
@@ -365,7 +365,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="NH" data-slug="hampton-nh" data-lat="42.9382306" data-lng="-70.8377767">
+      <div class="location-card" data-state="NH" data-slug="hampton-nh" data-lat="42.9382306" data-lng="-70.8377767" data-city="Hampton" data-zip="03842" data-name="Hampton">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Hampton</div>
           <span class="card-state-badge nh">N.H.</span>
@@ -389,14 +389,14 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="NH" data-slug="portsmouth-nh" data-lat="43.0790164" data-lng="-70.7627975">
+      <div class="location-card" data-state="NH" data-slug="portsmouth-nh" data-lat="43.0790164" data-lng="-70.7627975" data-city="Portsmouth" data-zip="03801" data-name="Portsmouth">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Portsmouth</div>
           <span class="card-state-badge nh">N.H.</span>
         </div>
         <div class="card-address">111 Maplewood Avenue, Portsmouth, NH 03801</div>
         <div class="card-badges">
-          <span class="card-badge available">ATM</span><span class="card-badge">No Sat Lobby</span>
+          <span class="card-badge available">ATM</span>
         </div>
         <div class="card-hours-preview">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
@@ -413,7 +413,7 @@
           </a>
         </div>
       </div>
-      <div class="location-card" data-state="NH" data-slug="stratham-nh" data-lat="42.9948284" data-lng="-70.9260492">
+      <div class="location-card" data-state="NH" data-slug="stratham-nh" data-lat="42.9948284" data-lng="-70.9260492" data-city="Stratham" data-zip="03885" data-name="Stratham">
         <div class="card-header">
           <div class="card-name">Kennebunk Savings | Stratham</div>
           <span class="card-state-badge nh">N.H.</span>
@@ -446,7 +446,7 @@
           <iframe
             id="locations-map"
             title="Map of all Kennebunk Savings Bank branches"
-            src="https://maps.google.com/maps?q=Kennebunk+Savings+Bank&t=&z=9&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=43.21454515625,-70.70682365&t=&z=9&ie=UTF8&iwloc=&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen>
@@ -457,96 +457,64 @@
     </div>
   </div>
 
-  <!-- Keyword-Targeted Content Section -->
-  <section class="locations-about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-block">
-          <h2>Community Banking in Southern Maine and New Hampshire</h2>
-          <p>Kennebunk Savings Bank has been a community bank serving York County, Maine and the New Hampshire Seacoast since 1871. With 12 branches in Maine and 4 branches in New Hampshire, you're never far from a location that offers <a href="https://www.kennebunksavings.com/personal-banking/personal-checking/">checking accounts</a>, <a href="https://www.kennebunksavings.com/personal-banking/personal-savings-accounts/">savings accounts</a>, <a href="https://www.kennebunksavings.com/personal-banking/mortgage-products/">mortgages</a>, <a href="https://www.kennebunksavings.com/personal-banking/home-equity-loan-rates/">home equity loans</a>, <a href="https://www.kennebunksavings.com/personal-banking/personal-loans/">personal loans</a>, and <a href="https://www.kennebunksavings.com/business-banking-services/business-accounts/">business banking</a>.</p>
-          <p>Our branches are in <a href="berwick.html">Berwick</a>, <a href="eliot.html">Eliot</a>, <a href="kennebunk-main-street.html">Kennebunk</a>, <a href="kittery.html">Kittery</a>, <a href="north-berwick.html">North Berwick</a>, <a href="ogunquit.html">Ogunquit</a>, <a href="sanford.html">Sanford</a>, <a href="wells.html">Wells</a>, and <a href="york-hannaford-drive.html">York</a> in Maine, plus <a href="dover-nh.html">Dover</a>, <a href="hampton-nh.html">Hampton</a>, <a href="portsmouth-nh.html">Portsmouth</a>, and <a href="stratham-nh.html">Stratham</a> in New Hampshire. Each location has an ATM, and most offer drive-up banking and Saturday hours so you can bank on your schedule.</p>
-        </div>
-        <div class="about-block">
-          <h2>What You Can Do at Any Branch</h2>
-          <ul class="about-list">
-            <li>Open a <a href="https://www.kennebunksavings.com/personal-banking/personal-checking/">personal checking</a> or <a href="https://www.kennebunksavings.com/personal-banking/personal-savings-accounts/">savings account</a></li>
-            <li>Apply for a <a href="https://www.kennebunksavings.com/personal-banking/mortgage-products/">mortgage</a>, <a href="https://www.kennebunksavings.com/personal-banking/home-equity-loan-rates/">home equity loan</a>, or <a href="https://www.kennebunksavings.com/personal-banking/personal-loans/">personal loan</a></li>
-            <li>Set up <a href="https://www.kennebunksavings.com/business-banking-services/business-accounts/">business accounts</a> and <a href="https://www.kennebunksavings.com/business-banking-services/cash-management-solutions/">cash management</a></li>
-            <li>Get help with <a href="https://www.kennebunksavings.com/personal-banking/online-mobile-banking/">online and mobile banking</a></li>
-            <li>Talk to an insurance advisor about <a href="https://www.kennebunksavings.com/personal-banking/home-property-insurance/">home</a>, <a href="https://www.kennebunksavings.com/personal-banking/auto-insurance/">auto</a>, or <a href="https://www.kennebunksavings.com/personal-banking/life-disability-insurance/">life coverage</a></li>
-            <li>Use the ATM for deposits and withdrawals around the clock</li>
-          </ul>
-        </div>
-        <div class="about-block">
-          <h2>Banking Hours and Availability</h2>
-          <p>Most Kennebunk Savings branches open at 9:00 AM on weekdays. Some locations close at 4:30 PM Monday through Thursday with extended hours on Friday, while others stay open until 5:00 PM all week. Saturday lobby hours are available at most branches from 9:00 AM to 12:00 PM. Our Customer Care Team is available Monday through Thursday from 8:00 AM to 5:00 PM, Friday from 8:00 AM to 5:30 PM, and Saturday from 8:00 AM to 12:00 PM at <a href="tel:+18003396573">1-800-339-6573</a>.</p>
-        </div>
-        <div class="about-block">
-          <h2>Serving Cumberland, York, Rockingham, and Strafford Counties</h2>
-          <p>Bank and lending products and services are available to customers who live or work in Cumberland or York Counties in Maine, or Rockingham or Strafford Counties in New Hampshire. Whether you're in <a href="kennebunk-main-street.html">Kennebunk</a>, <a href="kittery.html">Kittery</a>, <a href="dover-nh.html">Dover</a>, or <a href="portsmouth-nh.html">Portsmouth</a>, there's a Kennebunk Savings branch nearby with the personal attention you'd expect from a <a href="https://www.kennebunksavings.com/about-us/our-story/">community bank</a> that gives 10% of its earnings back to <a href="https://www.kennebunksavings.com/about-us/community-promise/">local nonprofits</a> every year.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <script>
   (function() {
-    // State filter tabs
-    var tabs = document.querySelectorAll('.state-tab');
     var cards = document.querySelectorAll('.location-card');
     var countEl = document.getElementById('results-count');
     var mapIframe = document.getElementById('locations-map');
+    var searchInput = document.getElementById('location-search');
+    var clearBtn = document.getElementById('search-clear');
+    var defaultMapSrc = 'https://maps.google.com/maps?q=43.21454515625,-70.70682365&t=&z=9&ie=UTF8&iwloc=&output=embed';
 
-    // Map URLs per filter
-    var mapUrls = {
-      'all': 'https://maps.google.com/maps?q=Kennebunk+Savings+Bank&t=&z=9&ie=UTF8&iwloc=&output=embed',
-      'ME': 'https://maps.google.com/maps?q=Kennebunk+Savings+Bank+Maine&t=&z=10&ie=UTF8&iwloc=&output=embed',
-      'NH': 'https://maps.google.com/maps?q=Kennebunk+Savings+Bank+New+Hampshire&t=&z=10&ie=UTF8&iwloc=&output=embed'
-    };
+    // Search filtering
+    searchInput.addEventListener('input', function() {
+      var query = this.value.trim().toLowerCase();
+      clearBtn.style.display = query ? 'block' : 'none';
 
-    tabs.forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        var filter = this.getAttribute('data-filter');
+      var visible = 0;
+      cards.forEach(function(card) {
+        var city = card.getAttribute('data-city').toLowerCase();
+        var zip = card.getAttribute('data-zip');
+        var name = card.getAttribute('data-name').toLowerCase();
+        var state = card.getAttribute('data-state').toLowerCase();
 
-        // Update active tab
-        tabs.forEach(function(t) { t.classList.remove('active'); });
-        this.classList.add('active');
-
-        // Filter cards
-        var visible = 0;
-        cards.forEach(function(card) {
-          if (filter === 'all' || card.getAttribute('data-state') === filter) {
-            card.classList.remove('hidden');
-            visible++;
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-
-        countEl.textContent = visible;
-
-        // Update map
-        if (mapUrls[filter]) {
-          mapIframe.src = mapUrls[filter];
+        if (!query || city.indexOf(query) !== -1 || zip.indexOf(query) !== -1 || name.indexOf(query) !== -1 || state.indexOf(query) !== -1) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
         }
       });
+      countEl.textContent = visible;
+
+      // If exactly one result, zoom map to it
+      if (visible === 1) {
+        var visibleCard = document.querySelector('.location-card:not(.hidden)');
+        var address = visibleCard.querySelector('.card-address').textContent.trim();
+        mapIframe.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(address) + '&t=&z=15&ie=UTF8&iwloc=&output=embed';
+      } else if (!query) {
+        mapIframe.src = defaultMapSrc;
+      }
     });
 
-    // Card click -> highlight + zoom map to that location
+    // Clear search
+    clearBtn.addEventListener('click', function() {
+      searchInput.value = '';
+      clearBtn.style.display = 'none';
+      cards.forEach(function(card) { card.classList.remove('hidden'); });
+      countEl.textContent = cards.length;
+      mapIframe.src = defaultMapSrc;
+      searchInput.focus();
+    });
+
+    // Card click -> highlight + zoom map
     cards.forEach(function(card) {
       card.addEventListener('click', function(e) {
-        // Don't intercept actual link clicks
         if (e.target.closest('a')) return;
 
-        var lat = this.getAttribute('data-lat');
-        var lng = this.getAttribute('data-lng');
-        var slug = this.getAttribute('data-slug');
-
-        // Remove active from all cards
         cards.forEach(function(c) { c.classList.remove('active'); });
         this.classList.add('active');
 
-        // Zoom map to this location
         var address = this.querySelector('.card-address').textContent.trim();
         mapIframe.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(address) + '&t=&z=15&ie=UTF8&iwloc=&output=embed';
       });

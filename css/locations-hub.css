@@ -176,54 +176,61 @@ a:hover {
   flex-shrink: 0;
 }
 
-.state-tabs {
+.search-box {
+  position: relative;
   display: flex;
-  gap: 4px;
-  background: var(--ksb-gray-100);
-  border-radius: var(--ksb-radius);
-  padding: 4px;
+  align-items: center;
 }
 
-.state-tab {
-  flex: 1;
-  padding: 10px 16px;
-  border: none;
-  background: none;
-  border-radius: 6px;
+.search-icon {
+  position: absolute;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  color: var(--ksb-gray-300);
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 36px 12px 38px;
+  border: 1.5px solid var(--ksb-gray-200);
+  border-radius: var(--ksb-radius);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-family: inherit;
+  color: var(--ksb-gray-900);
+  background: var(--ksb-white);
+  transition: border-color var(--ksb-transition);
+}
+
+.search-box input::placeholder {
+  color: var(--ksb-gray-300);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--ksb-purple);
+}
+
+.search-clear {
+  position: absolute;
+  right: 8px;
+  display: none;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--ksb-gray-100);
+  border-radius: 50%;
+  font-size: 1.1rem;
   color: var(--ksb-gray-500);
   cursor: pointer;
-  transition: all var(--ksb-transition);
-  font-family: inherit;
-  text-align: center;
+  line-height: 1;
+  padding: 0;
 }
 
-.state-tab:hover {
-  color: var(--ksb-purple);
-}
-
-.state-tab.active {
-  background: var(--ksb-white);
-  color: var(--ksb-purple);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.state-tab .tab-count {
-  display: inline-block;
+.search-clear:hover {
   background: var(--ksb-gray-200);
-  color: var(--ksb-gray-500);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 1px 7px;
-  border-radius: 10px;
-  margin-left: 6px;
-  vertical-align: middle;
-}
-
-.state-tab.active .tab-count {
-  background: var(--ksb-purple-bg);
-  color: var(--ksb-purple);
+  color: var(--ksb-gray-900);
 }
 
 /* Location Cards List */
